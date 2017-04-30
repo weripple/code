@@ -1,0 +1,14 @@
+{
+  "global": {
+    "parseVersion": "1.4.0"
+  },
+  "applications": {
+    "WeRipple": {
+      "applicationId": "TZNXi44YP1RF0DKTVY7hyPMIpj1rneGNFuTjKxZD",
+      "masterKey": "na4CCaMxooAb21hkhaPvLCxX5MbosBLDyWh9qNEr"
+    },
+    "_default": {
+      "link": "WeRipple"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+/**************
+GENERAL 
+***************/
+
+html, body {
+	box-sizing: border-box;
+}
+
+header{
+	text-align: center;
+}
+footer{
+	text-align: right;
+}
+
+a:link, a:visited {
+	color: blue;
+}
+
+a:active {
+	color: red;
+}
+
+
+/**************
+NAVIGATION
+***************/
+
+nav ul {
+	padding: 0;
+}
+
+nav li {
+	display: inline-block;
+	text-align: center;
+	padding: 3px;
+}
+
