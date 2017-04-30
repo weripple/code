@@ -1,5 +1,5 @@
 /**************
-GENERAL 
+GENERAL
 ***************/
 
 html, body {
@@ -36,3 +36,8 @@ nav li {
 	padding: 3px;
 }
 
+hr.ripple {
+    background-color: #7894ff !important;
+    border: 0;
+    height: 1px;
+}
