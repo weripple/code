@@ -16,38 +16,6 @@
 	</script>
 </head>
 <body id="dashboard" onload="verifyEmail()">
-	<script type="text/javascript">
-	     (function() {
-	       var GOOGLE_AUTH_URL = "https://accounts.google.com/o/oauth2/auth";
-	       var GOOGLE_CLIENT_ID = "859013733033-oqn2jej2ebikj8l6mu7de248m2k4du7r.apps.googleusercontent.com";
-	       //var PLUS_ME_SCOPE = "https://www.googleapis.com/auth/plus.me";
-	       //var FusionTable_SCOPE = "https://www.googleapis.com/auth/fusiontables";       
-	       var button = document.createElement("button");
-	       button.innerText = "Authenticate with Google";
-	       button.onclick = function() {
-
-	       var req = {
-	           'authUrl' : GOOGLE_AUTH_URL,
-	           'clientId' : GOOGLE_CLIENT_ID,
-	           'scopes': ['https://www.googleapis.com/auth/fusiontables'
-	                     ],
-	       };
-
-	       oauth2.login(req, function(token) {
-	           alert('Got an OAuth token:\n'+ token +'\n'+ 'Token expires in '+ oauth2.expiresIn(req) +' ms\n');
-	         }, function(error) {
-	           alert("Error:\n" + error);
-	         });
-	       };
-
-	       //document.body.appendChild(button);
-	       // var clearTokens = document.createElement('button');
-	       // clearTokens.innerText = 'Clear all tokens'
-	       // clearTokens.onclick = oauth2.clearAllTokens;
-	       // document.body.appendChild(clearTokens);
-
-	     })();
-	</script>
 	<header>
 		<div style="text-align: right;">
 			<button onclick="signUserOut()">Log Out</button>
@@ -86,7 +54,7 @@
 				<form id="invitationForm" name="invitationForm">
 					<p><label for="sendTo">Friend's Email:</label><br>
 					<input id="sendTo" name="sendTo" required="" type="text"></p>
-					<p><label for="message">Your Message:<br></label> 
+					<p><label for="message">Your Message:<br></label>
 					<textarea cols="55" id="message" name="message" required="" rows="9" style="max-width: 100%;">Join me in making a difference!</textarea></p>
 					<p><input type="submit" value="Send Invite!"></p>
 				</form>
@@ -97,37 +65,30 @@
 	<footer>
 		<p>&copy; 2015 WeRipple. All Rights Reserved.</p>
 	</footer>
-	
-
-	
 	<!-- Firebase Scripts -->
-	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-	<script>
-  	// Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyA7SIc7gJtbgn8yqwx3IWBqaNPfg_aDC30",
-	    authDomain: "weripple-86b6c.firebaseapp.com",
-	    databaseURL: "https://weripple-86b6c.firebaseio.com",
-	    projectId: "weripple-86b6c",
-	    storageBucket: "weripple-86b6c.appspot.com",
-	    messagingSenderId: "976807841375"
-	  };
-	  firebase.initializeApp(config);
-	</script>
-	
-	<!-- / Firebase Scripts -->
-
-	
+<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAcY75zkhIC_1mCTyp9rlBRDoTv7lAZZ0I",
+    authDomain: "ripples-89392.firebaseapp.com",
+    databaseURL: "https://ripples-89392.firebaseio.com",
+    projectId: "ripples-89392",
+    storageBucket: "ripples-89392.appspot.com",
+    messagingSenderId: "302574712847"
+  };
+  firebase.initializeApp(config);
+</script>
 	<script src="http://code.jquery.com/jquery-1.11.2.min.js">
-	</script> 
+	</script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js">
-	</script> 
+	</script>
 	<script src="http://www.parsecdn.com/js/parse-1.4.0.min.js">
-	</script> 
+	</script>
 	<script src="js/script.js" type="text/javascript">
-	</script> 
+	</script>
 	<script src="js/dropRipplesFrom.js" type="text/javascript">
-	</script> 
+	</script>
 <!-- 	<script src="js/convertAddressToCongressDistr.js" type="text/javascript">
 	</script>  -->
 	<script>
