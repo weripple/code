@@ -106,6 +106,15 @@ findCurrentUser = function(){
 			});
 		});
   }
+	//sending invite
+	Intent intent = new AppInviteInvitation.IntentBuilder("Send Invitations for XYZ app")
+         ...
+         .setEmailHtmlContent("&lthtml&gt&ltbody&gt"
+             + "&lta href=\"%%APPINVITE_LINK_PLACEHOLDER%%\"&gtXYZ Free Trial&lt/a&gt"
+             + "&lt/body&gt&lt/html&gt")
+         .setEmailSubject("XYZ Offer")
+         ...
+         .build();
 
   // *** SIGN UP *** // signIn.html 
 
