@@ -4,7 +4,7 @@ function checkForRipple() {
 var userId = firebase.auth().currentUser.uid;
 return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
 	var record = snapshot.val();
-	if (record.hasOwnProperty('inviterID') && snapshot.val().inviterID) {
+	if (snapshot.val() !== null && snapshot.val().inviterID) {
 		// do nothing
 	} else if (thisPage.inviterID) {
 		//create new user
