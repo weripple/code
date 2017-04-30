@@ -52,7 +52,7 @@ function ripple(userID) {
 		});
 		*/
 		var updates = {};
-  	updates['/users/' + userID +'/currentReach'] = currentReach + 1;
+  	updates['/users/' + userID +'/rippleReach'] = currentReach + 1;
   	return firebase.database().ref().update(updates);
 		// If this person isn't Mary Beth,
 		if (inviterID) {
