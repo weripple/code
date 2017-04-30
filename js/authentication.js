@@ -1,4 +1,5 @@
 function checkForRipple() {
+	console.log('Checking for ripple...');
 // look for user's inviterID
 var userId = firebase.auth().currentUser.uid;
 return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
@@ -14,6 +15,7 @@ return firebase.database().ref('/users/' + userId).once('value').then(function(s
 
 // on sign up attach inviterID
 function createNewUser(userId, inviterID) {
+	console.log('Creating user ' + userId + ' ' + inviterID);
 	firebase.database().ref('users/' + userId).set({
 		inviterID: inviterID,
 		rippleReach: 0
@@ -26,12 +28,14 @@ function createNewUser(userId, inviterID) {
  * Recurring function to update a person's ripplCount, then "ripple up" to their inviter.
  */
 function ripple(userID) {
+	console.log('Rippling ' + userID);
 	return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
 	  // Find the current user's reach
 		var currentReach = snapshot.val().rippleReach;
 		// Find the current user's inviter
 		var inviterID = snapshot.val().inviterID;
 		// Increment the user's reach
+		console.log("Incrementing " + currentReach);
 		firebase.database().ref('users/' + userId).set({
 			rippleReach: currentReach + 1
 		});
