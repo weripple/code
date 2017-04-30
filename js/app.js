@@ -31,7 +31,6 @@ $(document).ready(function() {
     //index 2=second group(value)
     $("input[name=" + query[1] + "]").attr("value", query[2]);
     query = r.exec(decodeURIComponent(window.location.href));
-    thisPage[query[1]] = query[2];
     // ^ repeats to get next capture
   }
 });
