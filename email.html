@@ -47,6 +47,21 @@ limitations under the License.
 
   <script type="text/javascript">
 
+$(document).ready(function() {
+
+    var r = /(?:\?|&(?:amp;)?)([^=&#]+)(?:=?([^&#]*))/g;
+    var query = r.exec(decodeURIComponent(window.location.href));
+    // ^ gets the first query from the url
+    while (query != null) {
+
+      //index 0=whole match, index 1=first group(key) index 2=second group(value)
+
+      $("input[name="+ query[1] +"]").attr("value",query[2]);
+
+      query = r.exec(decodeURIComponent(window.location.href));
+      // ^ repeats to get next capture
+
+    }
     /**
      * Handles the sign in button press.
      */
