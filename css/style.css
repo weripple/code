@@ -9,4 +9,16 @@ body {
     background: -moz-linear-gradient(#4D7BFF, #4D39FF); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#4D7BFF, #4D39FF); /* Standard syntax (must be last) */
 }
+h3, h2, h1, p, label {
+    font-family: lato, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom:10px;
+    color: white;
+}
+textarea {
+    margin-top: 10px;
+}
+input {
+    margin-top: 10px;
 }

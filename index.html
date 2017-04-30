@@ -42,29 +42,29 @@
             </div>
         </div>
         <div id="dashData" style="display:inline-block; vertical-align:middle; width: 25%; min-width: 169.5px; box-sizing: border-box;">
-            <h2>Hey <span id="userFName"></span>,</h2>
-            <p>Rippling since: <span id="createdAt"></span></p>
+            <h2 style="font-weight:800; display:inline-block;">Hello World! <span id="userFName"></span></h2><span> <img style="display:inline-block; padding:10px; padding-bottom:0px;" src="images/world.png" alt="world"> </span>
+            <p>Rippling since: April 29, 2017 <span id="createdAt"></span></p>
             <hr>
-            <h3 style="font-size: 2em;">Your Ripples: <a href="#" id="userRipplePoints"></a></h3>
+            <h3 style="font-size: 2em; font-weight:800">Your Ripples: <a href="#" id="userRipplePoints"></a></h3>
             <h3>Your District: <a href="districtRipples.html" id="userDistrict"></a></h3>
             <h3>Ripplers in your District: <a href="#" id="districtRipples"></a></h3>
             <h3>Total Ripples in USA: <a href="#" id="usaRipples"></a></h3>
             <hr>
             <div id="invite">
-                <h2>Send Invitation</h2>
+                <h2 style="font-weight:800;">Invite your friends!</h2>
                 <form id="invitationForm" name="invitationForm">
                     <p><label for="sendTo">Friend's Email:</label><br>
-                    <input id="sendTo" name="sendTo" required="" type="text"></p>
-                    <p><label for="message">Your Message:<br></label>
-                    <textarea cols="55" id="message" name="message" required="" rows="9" style="max-width: 100%;">Join me in making a difference!</textarea></p>
-                    <p><input type="submit" value="Send Invite!"></p>
+                    <input id="sendTo" name="sendTo" required="" type="text" style="border-radius:6px; height:20px; width:200px;"></p>
+                    <p><label for="message" >Your Message:<br></label>
+                        <textarea cols="55" id="message" name="message" style="border-radius:6px;" required="" rows="9" style="max-width: 100%;">Join me in making a difference!</textarea></p>
+                    <p><input type="submit" style="width: 150px;margin-top:0px;font-size:24px;font-weight:bold;" value="Send Invite!"></p>
                 </form>
             </div>
         </div>
     </section>
     <hr>
     <footer>
-        <p>&copy; 2015 WeRipple. All Rights Reserved.</p>
+        <p style="font-size:10px;padding-right:5px;">&copy; 2015 WeRipple. All Rights Reserved.</p>
     </footer>
     <!-- Firebase Scripts -->
 <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
