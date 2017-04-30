@@ -30,14 +30,14 @@ function createNewUser(userId, inviterID) {
  */
 function ripple(userID) {
 	console.log('Rippling ' + userID);
-	return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+	return firebase.database().ref('/users/' + userID).once('value').then(function(snapshot) {
 	  // Find the current user's reach
 		var currentReach = snapshot.val().rippleReach;
 		// Find the current user's inviter
 		var inviterID = snapshot.val().inviterID;
 		// Increment the user's reach
 		console.log("Incrementing " + currentReach);
-		firebase.database().ref('users/' + userId).set({
+		firebase.database().ref('users/' + userID).set({
 			rippleReach: currentReach + 1
 		});
 		// If this person isn't Mary Beth,
