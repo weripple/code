@@ -2,15 +2,16 @@
 $(document).ready(function() {
 
 	// Initilizing Parse
+	/*
 	var parseAPPID = "TZNXi44YP1RF0DKTVY7hyPMIpj1rneGNFuTjKxZD";
 	var parseJSID = "1TDkVaaiIrHvpdjtFketDhwGkaJQ4xbNRurDANjl";
 
 	Parse.initialize(parseAPPID, parseJSID);
-	
+	*/
 	// Get form parameters from any URL
 	$(document).ready(function(){
     var r = /(?:\?|&(?:amp;)?)([^=&#]+)(?:=?([^&#]*))/g;
-    var query = r.exec(decodeURIComponent(window.location.href));  
+    var query = r.exec(decodeURIComponent(window.location.href));
     // ^ gets the first query from the url
     while (query != null) {
 
@@ -18,17 +19,17 @@ $(document).ready(function() {
 
       $("input[name="+ query[1] +"]").attr("value",query[2]);
 
-      query = r.exec(decodeURIComponent(window.location.href)); 
+      query = r.exec(decodeURIComponent(window.location.href));
       // ^ repeats to get next capture
 
     }
   });
-	
-	// *** COMMENT FORM *** // index.html 
+
+	// *** COMMENT FORM *** // index.html
 	$("#commentForm").on("submit", function(event) {
 		event.preventDefault();
 
-		var CommentObject = Parse.Object.extend("CommentObject");
+		//var CommentObject = Parse.Object.extend("CommentObject");
 
 		var data = {};
 		data.name = $("#name").val();
@@ -49,22 +50,23 @@ $(document).ready(function() {
 	});
 //	*** SIGN OUT ***
 signUserOut = function(){
-	Parse.User.logOut();
+	//Parse.User.logOut();
 	window.location.href = "signIn.html";
 };
-	// *** SIGN IN *** // signIn.html 
-	currentUser = Parse.User.current();
+	// *** SIGN IN *** // signIn.html
+	//currentUser = Parse.User.current();
 findCurrentUser = function(){
 		if (currentUser) {
 			window.location.href = "dashboard.html";
 		}
-	};	
+	};
   $("#signInForm").on("submit", function(event){
 		event.preventDefault();
 
 		var username = $("#username").val(),
 				password = $("#password").val();
 
+				/*
 		Parse.User.logIn(username, password, {
 		  success: function(user) {
 		    console.log("Successful login!");
@@ -76,9 +78,11 @@ findCurrentUser = function(){
 		    window.location.href = "signIn.html";
 		  }
 		});
+		*/
 	});
 
   // *** INVITE USERS *** // inviteUsers.html
+  /*
   if (currentUser){
 
   	$("#invitationForm").on("submit", function(event) {
@@ -107,7 +111,8 @@ findCurrentUser = function(){
 		});
   }
 
-  // *** SIGN UP *** // signIn.html 
+*/
+  // *** SIGN UP *** // signIn.html
 
   checkForInvitedBy = function(){
   	if ( $("#invitedBy").val() == "") {
@@ -124,16 +129,16 @@ findCurrentUser = function(){
 	  var confirmPassword = $("#confirmPassword").val();
 	  var addressWithZip = $("#address").val()+" "+$("#zipcode").val();
 
-	  if (password != confirmPassword) 
+	  if (password != confirmPassword)
     	alert("Passwords don't match! Please try again");
     else {
-
+    	/*
 		  var query = new Parse.Query(Parse.User);
 		  query.equalTo("username", $("#invitedBy").val());
 			query.first({
 			  success: function(invitedBy) {
 			  	//convertAddressToCongressDistr.js
-			  	convertAddressToCongressDistr(addressWithZip, "sortUser"); 
+			  	convertAddressToCongressDistr(addressWithZip, "sortUser");
 			  	sortUser = function(district, latLng){
 
 			  		dropDistrictRipple(district); //dropRipplesFrom.js
@@ -153,7 +158,7 @@ findCurrentUser = function(){
 						if ( invitedBy == undefined) {
 				  		alert("Sign up not Successful. \nUnfortunately, You were not invited by someone within WeRipple. ");
 				  		window.location.href= "index.html"
-				  		
+
 				  	} else {
 				  		user.signUp(null, {
 							  success: function(user) {
@@ -170,16 +175,17 @@ findCurrentUser = function(){
 
 							  },
 							  error: function(user, error) {
-							    
+
 							  }
 							});
-				  	}	
+				  	}
 					};
 			  },
 			  error: function(object, error) {
 			  }
 			});
-    } 
+			*/
+    }
 	});
 
 	// *** DASHBOARD *** // dashboard.html
@@ -204,18 +210,6 @@ findCurrentUser = function(){
 			},
 			error: function(){}
 		});
-
-		// Find Ripples in country
-		var query = new Parse.Query(Parse.User);
-		query.equalTo("username", "WeRipple (default)"); 
-		query.first({
-			success: function(userFile) {
-				$("#usaRipples").html(userFile.get("userRipples"));
-			},
-			error: function(file, error) {}
-		});
-
-
 		verifyEmail = function(){
 			currentUser.fetch({
 			  success: function(currentUser) {
