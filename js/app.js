@@ -144,6 +144,7 @@ function initApp() {
       $('#quickstart-sign-up').hide();
       $('#email').prop("disabled", true);
       $('#password').prop("disabled", true);
+      checkForRipple();
       //$('#signin-card-label').css({marginBottom: '-30px'});
     } else {
       // User is signed out.
