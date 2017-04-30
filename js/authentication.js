@@ -3,7 +3,8 @@ function checkForRipple() {
 // look for user's inviterID
 var userId = firebase.auth().currentUser.uid;
 return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-	if (snapshot.val().inviterID) {
+	var record = snapshot.val();
+	if (record.hasOwnProperty('inviterID') && snapshot.val().inviterID) {
 		// do nothing
 	} else if (thisPage.inviterID) {
 		//create new user
