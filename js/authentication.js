@@ -11,6 +11,7 @@ return firebase.database().ref('/users/' + userId).once('value').then(function(s
 		createNewUser(userId, thisPage.inviterID);
 		// sign up
 	}
+	console.log('here!!!!');
 	getFreshNumber();
 });
 
@@ -26,6 +27,7 @@ function createNewUser(userId, inviterID) {
 }
 
 function getFreshNumber() {
+	console.log('inside the fresh part');
 	var userId = firebase.auth().currentUser.uid;
 	return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
 	var record = snapshot.val();
