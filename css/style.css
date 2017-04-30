@@ -1,0 +1,12 @@
+body {
+    background: linear-gradient(down, #4D7BFF, #4D39FF);
+}
+
+body {
+    background: #4D7BFF; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#4D7BFF, #4D39FF); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#4D7BFF, #4D39FF); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#4D7BFF, #4D39FF); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#4D7BFF, #4D39FF); /* Standard syntax (must be last) */
+}
+}
