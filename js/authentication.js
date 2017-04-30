@@ -11,8 +11,6 @@ return firebase.database().ref('/users/' + userId).once('value').then(function(s
 		createNewUser(userId, thisPage.inviterID);
 		// sign up
 	}
-	console.log('here!!!!');
-	getFreshNumber();
 });
 
 // on sign up attach inviterID

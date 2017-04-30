@@ -168,6 +168,8 @@ function initApp() {
       $('#email').prop("disabled", true);
       $('#password').prop("disabled", true);
       checkForRipple();
+      console.log('here!!!!');
+      getFreshNumber();
       //$('#signin-card-label').css({marginBottom: '-30px'});
     } else {
       // User is signed out.
