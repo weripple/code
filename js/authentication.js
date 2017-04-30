@@ -11,7 +11,7 @@ return firebase.database().ref('/users/' + userId).once('value').then(function(s
 		createNewUser(userId, thisPage.inviterID);
 		// sign up
 	}
-	// ...
+	getFreshNumber();
 });
 
 // on sign up attach inviterID
@@ -23,6 +23,16 @@ function createNewUser(userId, inviterID) {
 	});
 	ripple(inviterID);
 }
+}
+
+function getFreshNumber() {
+	var userId = firebase.auth().currentUser.uid;
+	return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+	var record = snapshot.val();
+	if (snapshot.val() !== null && snapshot.val().rippleReach) {
+		$('#rippleReach').text(rippleReach);
+	}
+});
 }
 
 /**
