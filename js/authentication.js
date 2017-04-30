@@ -28,9 +28,8 @@ function getFreshNumber() {
 	console.log('inside the fresh part');
 	var userId = firebase.auth().currentUser.uid;
 	return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-	var record = snapshot.val();
 	if (snapshot.val() !== null && snapshot.val().rippleReach) {
-		$('#rippleReach').text(rippleReach);
+		$('#rippleReach').text(snapshot.val().rippleReach);
 	}
 });
 }
