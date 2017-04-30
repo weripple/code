@@ -46,9 +46,14 @@ function ripple(userID) {
 		var inviterID = snapshot.val().inviterID;
 		// Increment the user's reach
 		console.log("Incrementing " + currentReach);
+		/*
 		firebase.database().ref('users/' + userID).set({
-			rippleReach: currentReach + 1
+			rippleReach: currentReach + 1,
 		});
+		*/
+		var updates = {};
+  	updates['/users/' + userID +'/currentReach'] = currentReach + 1;
+  	return firebase.database().ref().update(updates);
 		// If this person isn't Mary Beth,
 		if (inviterID) {
 		  // Send this ripple up to their inviter.
