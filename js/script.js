@@ -40,6 +40,14 @@ findCurrentUser = function(){}
 	  if (password != confirmPassword)
     	alert("Passwords don't match! Please try again");
     else {
+	    $(document).ready(function() {
+   		 $('#bt1').click(function() {
+        	$('#fr1').attr('action',
+                       'mailto:test@test.com?subject=' +
+                       $('#tb1').val() + '&body=' + $('#tb2').val());
+        	$('#fr1').submit();
+    			});
+		});
     	/*
 		  var query = new Parse.Query(Parse.User);
 		  query.equalTo("username", $("#invitedBy").val());
